@@ -903,6 +903,54 @@ section {
   fill: #ffbb2c;
 }
 
+.services .iconbox-darkgreen i {
+  color: #0c4b33;
+}
+
+.services .iconbox-darkgreen:hover .icon i {
+  color: #fff;
+}
+
+.services .iconbox-darkgreen:hover .icon path {
+  fill: #0c4b33;
+}
+
+.services .iconbox-seagreen i {
+  color: #2d9365;
+}
+
+.services .iconbox-seagreen:hover .icon i {
+  color: #fff;
+}
+
+.services .iconbox-seagreen:hover .icon path {
+  fill: #2d9365;
+}
+
+.services .iconbox-slateblue i {
+  color: #6239e5;
+}
+
+.services .iconbox-slateblue:hover .icon i {
+  color: #fff;
+}
+
+.services .iconbox-slateblue:hover .icon path {
+  fill: #6239e5;
+}
+
+.services .iconbox-violet i {
+  color: #af0072;
+}
+
+.services .iconbox-violet:hover .icon i {
+  color: #fff;
+}
+
+.services .iconbox-violet:hover .icon path {
+  fill: #af0072;
+}
+
 .services .iconbox-red i {
   color: #ff5828;
 }
