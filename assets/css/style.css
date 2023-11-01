@@ -4,6 +4,8 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: #272829;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -151,7 +153,7 @@ h6 {
   list-style: none;
 }
 
-.nav-menu>ul>li {
+.nav-menu > ul > li {
   position: relative;
   white-space: nowrap;
 }
@@ -166,7 +168,7 @@ h6 {
   transition: 0.3s;
   font-size: 15px;
   border-radius: 50px;
-  background: #f2f3f5;
+  background: #f5f2f2;
   height: 56px;
   width: 100%;
   overflow: hidden;
@@ -185,7 +187,6 @@ h6 {
 }
 
 @media (min-width: 992px) {
-
   .nav-menu a,
   .nav-menu a:focus {
     width: 56px;
@@ -201,7 +202,7 @@ h6 {
 .nav-menu a:hover,
 .nav-menu .active,
 .nav-menu .active:focus,
-.nav-menu li:hover>a {
+.nav-menu li:hover > a {
   color: #fff;
   background: #0563bb;
 }
@@ -209,18 +210,18 @@ h6 {
 .nav-menu a:hover span,
 .nav-menu .active span,
 .nav-menu .active:focus span,
-.nav-menu li:hover>a span {
+.nav-menu li:hover > a span {
   color: #fff;
 }
 
 .nav-menu a:hover,
-.nav-menu li:hover>a {
+.nav-menu li:hover > a {
   width: 100%;
   color: #fff;
 }
 
 .nav-menu a:hover span,
-.nav-menu li:hover>a span {
+.nav-menu li:hover > a span {
   display: block;
 }
 
@@ -253,11 +254,32 @@ h6 {
 
 .mobile-nav-active #header {
   left: 0;
+  background-color: rgba(255, 255, 255, 0.559);
 }
 
 .mobile-nav-active .mobile-nav-toggle {
   color: #fff;
   background-color: #0563bb;
+}
+
+/*--------------------------------------------------------------
+# Welcome Section
+--------------------------------------------------------------*/
+#welcome h1 {
+  color: white;
+  font-weight: bolder;
+  font-size: 10vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#gradient-canvas {
+  --gradient-color-1: #6ec3f4;
+  --gradient-color-2: #0563bb;
+  --gradient-color-3: #0563bb;
+  --gradient-color-4: #e63946;
 }
 
 /*--------------------------------------------------------------
@@ -267,6 +289,7 @@ h6 {
   width: 100%;
   height: 100vh;
   background: url("../img/hero-bg.jpg") top right no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   position: relative;
 }
@@ -737,7 +760,10 @@ section {
   position: relative;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
   background-color: #fff;
@@ -745,7 +771,10 @@ section {
   border: 1px solid #0563bb;
 }
 
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+.portfolio-details
+  .portfolio-details-slider
+  .swiper-pagination
+  .swiper-pagination-bullet-active {
   background-color: #0563bb;
 }
 
@@ -768,7 +797,7 @@ section {
   font-size: 15px;
 }
 
-.portfolio-details .portfolio-info ul li+li {
+.portfolio-details .portfolio-info ul li + li {
   margin-top: 10px;
 }
 
@@ -1117,7 +1146,7 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br+br {
+.contact .php-email-form .error-message br + br {
   margin-top: 25px;
 }
 
@@ -1156,8 +1185,8 @@ section {
   font-size: 14px;
 }
 
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email] {
+.contact .php-email-form input[type="text"],
+.contact .php-email-form input[type="email"] {
   height: 44px;
 }
 
@@ -1165,7 +1194,7 @@ section {
   padding: 10px 12px;
 }
 
-.contact .php-email-form button[type=submit] {
+.contact .php-email-form button[type="submit"] {
   background: #0563bb;
   border: 0;
   padding: 10px 35px;
@@ -1174,7 +1203,7 @@ section {
   border-radius: 50px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact .php-email-form button[type="submit"]:hover {
   background: #0678e3;
 }
 
