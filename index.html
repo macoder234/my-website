@@ -3,44 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Website Access Challenge</title>
+    <title>Access Challenge</title>
     <script
       src="https://challenges.cloudflare.com/turnstile/v0/api.js"
       async
       defer
     ></script>
+    <script src="assets/js/Gradient.js"></script>
     <style>
-      /* Basic style for centering the challenge */
+      /* Make the entire body take up full height */
       body,
       html {
         height: 100%;
+        margin: 0;
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: hidden;
+      }
+
+      /* The container holding your content */
+      .challenge-container {
+        position: absolute;
+        top: 50%;
+        left: 15%;
+        text-align: center;
+        z-index: 10;
+      }
+
+      .gradient-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+      }
+
+      /* Add this to your existing CSS */
+      @keyframes slideOutUp {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(-100%);
+        }
+      }
+
+      .slide-out-up {
+        animation: slideOutUp 1s forwards;
       }
     </style>
+    <link href="assets/css/style.css" rel="stylesheet" />
   </head>
   <body>
-    <div>
-      <div class="cf-turnstile" data-sitekey="0x4AAAAAAAw00HgrJB3oky8b"></div>
-      <button id="verifyButton">Proceed</button>
+    <canvas id="gradient-canvas" class="gradient-canvas"></canvas>
+    <div class="challenge-container">
+      <div
+        class="cf-turnstile"
+        data-sitekey="0x4AAAAAAAw00HgrJB3oky8b"
+        data-callback="turnstileCallback"
+      ></div>
     </div>
+    <script>
+      var gradient = new Gradient();
+      gradient.initGradient("#gradient-canvas");
+    </script>
 
     <script>
-      document.getElementById("verifyButton").onclick = function () {
-        // Fetch the Turnstile token from the widget
-        const turnstileWidget = document.querySelector(".cf-turnstile");
-        const token = turnstileWidget.querySelector(
-          '[name="cf-turnstile-response"]'
-        ).value;
-
-        // Proceed if the Turnstile token exists (i.e., user passed the challenge)
+      function turnstileCallback(token) {
         if (token) {
-          window.location.href = "/main.html"; // Redirect to your main page
-        } else {
-          alert("Please complete the verification.");
+          const container = document.querySelector(".challenge-container");
+          container.classList.add("slide-out-up");
+          setTimeout(() => {
+            window.location.href = "/main.html"; // Auto-redirect to main page // Auto-redirect to main page
+          }, 1000); // Match the duration of the animation
         }
-      };
+      }
     </script>
   </body>
 </html>
